@@ -1,31 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiMail, HiLocationMarker } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const contactInfo = [
   {
     icon: <HiMail size={22} />,
     label: 'Email',
-    value: 'prasad@example.com',
-    href: 'mailto:prasad@example.com',
+    value: 'prasaddesai2141@gmail.com',
+    href: 'mailto:prasaddesai2141@gmail.com',
   },
   {
     icon: <FaGithub size={22} />,
     label: 'GitHub',
-    value: 'github.com/prasad',
-    href: 'https://github.com/prasad',
+    value: 'https://github.com/prasaddesai2141',
+    href: 'https://github.com/prasaddesai2141',
   },
   {
     icon: <FaLinkedin size={22} />,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/prasad',
-    href: 'https://linkedin.com/in/prasad',
+    value: 'linkedin.com/in/prasad-desai-2797m',
+    href: 'https://linkedin.com/in/prasad-desai-2797m',
   },
   {
     icon: <HiLocationMarker size={22} />,
     label: 'Location',
-    value: 'India',
+    value: 'Pune, Maharashtra, India',
     href: null,
   },
 ];
@@ -33,15 +34,56 @@ const contactInfo = [
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('LTae9zVaK3lF4P0nq');
+  }, []);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      // Send email to admin
+      await emailjs.send(
+        'service_96d50kn',
+        'template_genjoxu',
+        {
+          to_email: 'prasadsocial27@gmail.com',
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        'LTae9zVaK3lF4P0nq'
+      );
+
+      // Send auto-reply to user
+      await emailjs.send(
+        'service_96d50kn',
+        'template_dbuv5cu',
+        {
+          to_email: form.email,
+          user_name: form.name,
+        },
+        'LTae9zVaK3lF4P0nq'
+      );
+
+      setSubmitted(true);
+      setForm({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      setError('Failed to send message. Please try again.');
+      console.error('EmailJS error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -177,11 +219,17 @@ export default function Contact() {
                   className="w-full px-4 py-3 rounded-xl bg-white dark:bg-dark-bg border border-gray-light/50 dark:border-dark-bg text-light-text dark:text-dark-text placeholder:text-gray-medium/50 focus:outline-none focus:ring-2 focus:ring-accent/30 dark:focus:ring-accent-light/30 focus:border-accent dark:focus:border-accent-light transition-all text-sm resize-none"
                 />
               </div>
+              {error && (
+                <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg text-red-700 dark:text-red-400 text-sm">
+                  {error}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full py-3.5 bg-accent hover:bg-blue-600 text-white rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5"
+                disabled={loading}
+                className="w-full py-3.5 bg-accent hover:bg-blue-600 disabled:bg-gray-400 text-white rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 disabled:cursor-not-allowed"
               >
-                {submitted ? '✓ Message Sent!' : 'Send Message'}
+                {loading ? 'Sending...' : submitted ? '✓ Message Sent!' : 'Send Message'}
               </button>
             </form>
           </motion.div>

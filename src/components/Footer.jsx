@@ -4,7 +4,7 @@ import { HiMail } from 'react-icons/hi';
 const socialLinks = [
   { icon: <FaGithub size={18} />, href: 'https://github.com/prasad', label: 'GitHub' },
   { icon: <FaLinkedin size={18} />, href: 'https://linkedin.com/in/prasad', label: 'LinkedIn' },
-  { icon: <HiMail size={18} />, href: 'mailto:prasad@example.com', label: 'Email' },
+  { icon: <HiMail size={18} />, href: 'mailto:prasaddesai2141@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {
