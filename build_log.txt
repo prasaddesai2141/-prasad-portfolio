@@ -1,0 +1,67 @@
+﻿[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mÔ£ô[39m 443 modules transformed.
+node.exe : [31mÔ£ù[39m Build failed in 
+1.77s
+At C:\Users\prasa\AppData\Roaming\npm\npx.
+ps1:24 char:5
++     & "node$exe"  "$basedir/node_modules
+/npm/bin/npx-cli.js" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+NotSpecified: (    [31mÔ£ù[39m Build 
+failed in 1.77s:Strin    g) [], 
+RemoteException
+    + FullyQualifiedErrorId : 
+NativeCommandEr    ror
+ 
+[31merror during build:
+[31msrc/components/Skills.jsx (13:2): 
+"SiVisualstudiocode" is not exported by 
+"node_modules/react-icons/si/index.mjs", 
+imported by 
+"src/components/Skills.jsx".[31m
+file: [36mD:/WEB-Project/My-portfolio/src
+/components/Skills.jsx:13:2[31m
+[33m
+11:   SiTailwindcss,
+12:   SiExpo,
+13:   SiVisualstudiocode,
+      ^
+14: } from 'react-icons/si';
+15: import { TbBrandReactNative } from 
+'react-icons/tb';
+[31m
+    at getRollupError (file:///D:/WEB-Proj
+ect/My-portfolio/node_modules/rollup/dist/
+es/shared/parseAst.js:402:41)
+    at error (file:///D:/WEB-Project/My-po
+rtfolio/node_modules/rollup/dist/es/shared
+/parseAst.js:398:42)
+    at Module.error (file:///D:/WEB-Projec
+t/My-portfolio/node_modules/rollup/dist/es
+/shared/node-entry.js:17040:16)
+    at Module.traceVariable (file:///D:/WE
+B-Project/My-portfolio/node_modules/rollup
+/dist/es/shared/node-entry.js:17452:29)
+    at ModuleScope.findVariable (file:///D
+:/WEB-Project/My-portfolio/node_modules/ro
+llup/dist/es/shared/node-entry.js:15070:39
+)
+    at Identifier.bind (file:///D:/WEB-Pro
+ject/My-portfolio/node_modules/rollup/dist
+/es/shared/node-entry.js:5447:40)
+    at CallExpression.bind (file:///D:/WEB
+-Project/My-portfolio/node_modules/rollup/
+dist/es/shared/node-entry.js:2825:28)
+    at CallExpression.bind (file:///D:/WEB
+-Project/My-portfolio/node_modules/rollup/
+dist/es/shared/node-entry.js:12179:15)
+    at Property.bind (file:///D:/WEB-Proje
+ct/My-portfolio/node_modules/rollup/dist/e
+s/shared/node-entry.js:2829:23)
+    at ObjectExpression.bind (file:///D:/W
+EB-Project/My-portfolio/node_modules/rollu
+p/dist/es/shared/node-entry.js:2825:28)[3
+9m
