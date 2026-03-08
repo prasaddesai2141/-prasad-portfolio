@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-light-card dark:bg-dark-card/50 border-t border-gray-light/30 dark:border-dark-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           {/* Logo */}
           <span className="text-lg font-bold font-[family-name:var(--font-poppins)] text-primary dark:text-accent-light tracking-tight">
             {'<'}

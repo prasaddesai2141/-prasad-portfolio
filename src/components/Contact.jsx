@@ -87,14 +87,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-white dark:bg-dark-bg">
+    <section id="contact" className="py-12 md:py-5 bg-white dark:bg-dark-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-accent dark:text-accent-light text-sm font-semibold tracking-widest uppercase">
             Contact
@@ -107,14 +107,14 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-5 gap-10 lg:gap-16">
+        <div className="grid md:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-2 space-y-4"
+            className="md:col-span-2 space-y-3"
           >
             {contactInfo.map((item, i) => (
               <motion.div

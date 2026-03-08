@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 bg-light-card dark:bg-dark-card/30"
+      className="py-12 md:py-5 bg-light-card dark:bg-dark-card/30"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -20,7 +20,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-accent dark:text-accent-light text-sm font-semibold tracking-widest uppercase">
             About Me
@@ -30,7 +30,7 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -60,7 +60,7 @@ export default function About() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-base md:text-lg text-gray-medium leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-gray-medium leading-relaxed mb-4">
               I am a frontend developer specializing in{' '}
               <span className="text-accent dark:text-accent-light font-semibold">
                 React
@@ -72,7 +72,7 @@ export default function About() {
               . I enjoy building modern, scalable and interactive applications
               that provide great user experiences.
             </p>
-            <p className="text-base md:text-lg text-gray-medium leading-relaxed mb-8">
+            <p className="text-base md:text-lg text-gray-medium leading-relaxed mb-6">
               With a passion for clean code and thoughtful design, I strive to
               create web and mobile solutions that are both beautiful and
               functional. I love learning new technologies and applying them to
@@ -88,7 +88,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4 + i * 0.1 }}
-                  className="text-center p-4 rounded-xl bg-white dark:bg-dark-card border border-gray-light/50 dark:border-dark-card"
+                  className="text-center p-3 rounded-xl bg-white dark:bg-dark-card border border-gray-light/50 dark:border-dark-card"
                 >
                   <div className="text-accent dark:text-accent-light mb-2 flex justify-center">
                     {stat.icon}

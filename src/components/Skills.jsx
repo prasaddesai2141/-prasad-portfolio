@@ -44,14 +44,14 @@ const categories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 bg-white dark:bg-dark-bg">
+    <section id="skills" className="py-20 md:py-5 bg-white dark:bg-dark-bg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-accent dark:text-accent-light text-sm font-semibold tracking-widest uppercase">
             My Skills
@@ -61,7 +61,7 @@ export default function Skills() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {categories.map((cat, catIdx) => (
             <motion.div
               key={cat.title}

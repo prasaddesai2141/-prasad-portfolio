@@ -36,7 +36,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 bg-light-card dark:bg-dark-card/30"
+      className="py-12 md:py-5 bg-light-card dark:bg-dark-card/30"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -44,7 +44,7 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <span className="text-accent dark:text-accent-light text-sm font-semibold tracking-widest uppercase">
             Portfolio
@@ -54,7 +54,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
