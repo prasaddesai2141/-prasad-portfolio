@@ -41,9 +41,11 @@ export default function About() {
           >
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-accent/20 dark:border-accent-light/20 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-accent/20 via-blue-400/20 to-purple-500/20 dark:from-accent-light/20 dark:via-blue-400/20 dark:to-purple-400/20 flex items-center justify-center">
-                  <span className="text-7xl md:text-8xl">👨‍💻</span>
-                </div>
+                <img
+                  src={profileImg}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 dark:bg-accent-light/10 rounded-2xl -z-10" />
